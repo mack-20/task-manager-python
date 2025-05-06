@@ -29,9 +29,7 @@ Built entirely with **Python fundamentals** — no external libraries, no file h
 
 - Each **task** is stored in a list as a string, followed by its **completion status** (`True` or `False`).
 - Example list structure:
-  ```python
   ["Buy milk", False, "Read book", True]
-````
 
 * Task IDs are based on the **even index** of the task in the list.
 * All user inputs are validated for:
