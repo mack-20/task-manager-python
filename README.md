@@ -86,7 +86,20 @@ This project uses:
 
 ## 📸 Demo
 
-> (You can add screenshots or terminal session GIFs here)
+### 🧩 Main Menu
+![Main Menu](screenshots/menu.png)
+
+### 🧩 Adding a Task
+![Add Task](screenshots/add-task.png)
+
+### 🧩 Marking a Task
+![Mark Task](screenshots/mark-task.png)
+
+### 🧩 Delete a Task
+![Delete Task](screenshots/delete-task.png)
+
+### 💻 Terminal Demo
+![Task Manager Demo](assets/SimpleTaskManager-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
