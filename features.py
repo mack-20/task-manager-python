@@ -1,6 +1,7 @@
 from utils import show_task_with_id, show_task_without_id, clear_screen
 from time import sleep
 from data import tasks
+import json
  
 def add_task():
   # input check
@@ -128,3 +129,18 @@ def delete_task():
   input("\n\nPress Enter↩ to return to main menu...")
   clear_screen()
   return
+
+def save_data_to_file():
+  with open('data.json', 'w') as file:
+    json.dump(tasks, file)
+
+def load_data_from_file():
+  try:
+    with open('data.json', 'r') as file:
+      loaded_task = json.load(file)
+      tasks.clear()
+      tasks.extend(loaded_task)
+  except FileNotFoundError:
+    print("No saved data found. Starting with an empty task list.")
+  except json.JSONDecodeError:
+    print("Error reading saved data. Starting with an empty task list.")
