@@ -1,116 +1,108 @@
 # 📝 Simple Task Manager
 
-A **console-based Python application** for managing daily tasks.  
-Built entirely with **Python fundamentals** — no external libraries, no file handling.
+A **console-based task management app** built using core Python programming fundamentals. This lightweight tool helps users manage their daily tasks—add, view, mark as done, and delete—right from the terminal.
 
 ---
 
-## 📌 Features
+## 🚀 Features
 
-- ✅ Add a new task  
-- 📋 View all tasks  
-- ✔️ Mark a task as done  
-- ❌ Delete a task  
-- 🚪 Exit the app  
-
----
-
-## ⚙️ Technologies & Concepts Used
-
-- Python built-ins only (`input()`, `print()`, `lists`, `functions`, etc.)
-- `os.system('cls')` for clearing screen (Windows only)
-- `time.sleep()` for delay effects
-- Basic error handling with `try-except`
-- Console UI for user interaction
+* ✅ **Add New Tasks**
+* 👀 **View All Tasks**
+* ✔️ **Mark Tasks as Done**
+* 🗑️ **Delete Tasks**
+* 💾 **Data Persistence (Save & Load from File)**
 
 ---
 
-## 🧠 How It Works
+## 🛠️ Built With
 
-- Each **task** is stored in a list as a string, followed by its **completion status** (`True` or `False`).
-- Example list structure:
-  ["Buy milk", False, "Read book", True]
+* Python `3.x`
+* Core programming concepts:
 
-* Task IDs are based on the **even index** of the task in the list.
-* All user inputs are validated for:
-
-  * Correct data type
-  * Not empty
-  * Valid task ID (even index only)
+  * Variables
+  * Lists
+  * Conditionals
+  * Loops
+  * Functions
+  * File I/O
+  * JSON serialization
 
 ---
 
-## ▶️ Getting Started
+## 📂 Project Structure
 
-### Run the App
-
-```bash
-python task_manager.py
+```
+simple-task-manager/
+│
+├── main.py            # Entry point of the application
+├── features.py        # Core task features (add, view, mark done, delete)
+├── utils.py           # Utility functions (UI helpers)
+├── data.py            # Global task list
+└── data.json          # Saved task data (auto-generated)
 ```
 
-> Make sure you're using a **Windows terminal** (for `cls` to work) or replace `cls` with `clear` for Linux/Mac.
+---
+
+## 📦 Installation
+
+> Ensure you have **Python 3.x** installed on your system.
+
+```bash
+git clone https://github.com/your-username/simple-task-manager.git
+cd simple-task-manager
+```
 
 ---
 
-## 🧹 Sample Task Flow
+## ▶️ Usage
 
-1. Add a task — user enters non-empty string.
-2. Task is added with default status `[ ] Not Done`.
-3. Mark it done — user enters valid **even-numbered ID**.
-4. Task is updated to `[x] Done`.
-5. Deleting removes both task and its status from the list.
+Run the app:
 
----
+```bash
+python main.py
+```
 
-## 🔓 No External Dependencies
+Follow the on-screen prompts to manage your tasks:
 
-This project uses:
+```
+1. Add a new Task
+2. View all Tasks
+3. Mark a Task as done
+4. Delete a Task
+5. Exit the app
+```
 
-* No packages
-* No files or databases
-* Just core Python logic — great for learning!
-
----
-
-## 🧑‍💻 Perfect For
-
-* Beginners learning Python
-* Practicing with:
-
-  * `while` loops
-  * `try-except`
-  * `lists`
-  * Simple logic building
+All tasks are saved in `data.json` and automatically loaded when the app starts.
 
 ---
 
-## 📸 Demo
+## 💡 Example Output
 
-### 🧩 Main Menu
-![Main Menu](screenshots/menu.png)
+```text
+SIMPLE TASK MANAGER
+====================
+1. Add a new Task
+2. View all Tasks
+3. Mark a Task as done
+4. Delete a Task
+5. Exit the app
 
-### 🧩 Adding a Task
-![Add Task](screenshots/add-task.png)
+> 1
+Enter task: Buy groceries
 
-### 🧩 Marking a Task
-![Mark Task](screenshots/mark-task.png)
-
-### 🧩 Delete a Task
-![Delete Task](screenshots/delete-task.png)
-
-### 💻 Terminal Demo
-![Task Manager Demo](assets/SimpleTaskManager-ezgif.com-video-to-gif-converter.gif)
-
----
-
-## ✅ To-Do / Ideas for Future
-
-* [ ] Save tasks to file (persistence)
-* [ ] Support task priority
-* [ ] Deadline reminders
-* [ ] Improve UI for non-Windows terminals
+Adding task to list...
+Task Added with a task id of 0
+```
 
 ---
 
-## 📄 License
-This project is open for learning and modification. No license restrictions.
+## 📌 Notes
+
+* Task IDs are always **even numbers**, as each task is stored with a corresponding completion status in the list.
+* Data is persisted between runs using `JSON`.
+
+---
+
+## 📖 License
+
+This project is licensed under the MIT License. Feel free to use and modify it for learning or personal productivity.
