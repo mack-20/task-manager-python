@@ -3,9 +3,13 @@ from time import sleep
 from data import tasks
 import json
  
+
+### NORMAL FEATURES
+
 def add_task():
   # input check
-  while True:
+  InvalidEntry = True
+  while InvalidEntry:
     try:
       task = input("Enter task: ").strip()
   
@@ -13,7 +17,8 @@ def add_task():
         raise Exception("Input cannot be empty. Try again")
   
       # Valid input, break loop
-      break
+      InvalidEntry = False
+
     except Exception as E:
       print(E)
   
@@ -63,7 +68,8 @@ def mark_task_as_done():
   show_task_with_id()
 
   # enter task id to mark as done
-  while True:
+  InvalidEntry = True
+  while InvalidEntry:
     try:
       task_id = int(input("\n\nEnter id of task to mark as done: "))
 
@@ -72,7 +78,8 @@ def mark_task_as_done():
         raise Exception("Invalid Task ID. Try Again")
       
       # Valid input, break loop
-      break
+      InvalidEntry = False
+
     except Exception as E:
       print(E)
 
@@ -101,7 +108,8 @@ def delete_task():
   show_task_with_id()
 
   # enter task id to mark as done
-  while True:
+  InvalidEntry = True
+  while InvalidEntry:
     try:
       task_id = int(input("\n\nEnter id of task to mark as done: "))
 
@@ -110,7 +118,8 @@ def delete_task():
         raise Exception("Invalid Task ID. Try Again")
       
       # Valid input, break loop
-      break
+      InvalidEntry = False
+      
     except Exception as E:
       print(E)
 
@@ -144,3 +153,6 @@ def load_data_from_file():
     print("No saved data found. Starting with an empty task list.")
   except json.JSONDecodeError:
     print("Error reading saved data. Starting with an empty task list.")
+
+
+# AI-POWERED FEATURES
